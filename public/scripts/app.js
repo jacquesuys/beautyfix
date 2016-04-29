@@ -11,4 +11,9 @@ angular.module('DOS', [])
   .catch(function (error) {
     console.error(error);
   });
+
+  $scope.viewUser = function(index) {
+  	event.preventDefault();
+  	console.log(index);
+  };
 });

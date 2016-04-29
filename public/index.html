@@ -7,8 +7,9 @@
 
 <body>
 	<div ng-controller="allUsersCtrl">
-		<div ng-repeat="user in users">
-      <div>Name: {{ user.first_name }}</div>
+		<label>Search: <input ng-model="searchText"></label>
+		<div ng-repeat="user in users | filter:searchText">
+      <div>Name: {{ user.first_name }} {{ user.last_name }}</div>
       <div>Email: {{ user.email_address }}</div>
     </div>
 	</div>

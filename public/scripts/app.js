@@ -5,7 +5,7 @@ angular.module('DOS', [])
     url: '/data/data.json'
   })
   .then(function (resp) {
-    console.log(resp.data);
+    $scope.users = resp.data;
   })
   .catch(function (error) {
     console.error(error);

@@ -29,3 +29,17 @@ body {
 a {
 	text-decoration: none;
 }
+
+.container {
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+.user {
+	border-bottom: solid 1px #ccc;
+
+	h2 {
+		padding: 0;
+		margin: 10px 0;
+	}
+}

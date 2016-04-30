@@ -1,12 +1,10 @@
 var gulp = require("gulp");
 var connect = require("gulp-connect");
 var sass = require("gulp-sass");
-var concat = require("gulp-concat");
 
 gulp.task("sass", function () {
   return gulp.src('./public/sass/style.scss')
     .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(concat('style.css'))
     .pipe(gulp.dest('./public/styles/'));
 });
 
@@ -27,4 +25,4 @@ gulp.task("start", function () {
   });
 });
 
-gulp.task('default', ['sass', 'start']);
+gulp.task('default', ['sass', 'start', 'sass:watch']);

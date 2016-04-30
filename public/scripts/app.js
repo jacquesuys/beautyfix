@@ -1,9 +1,13 @@
 angular.module('DOS', ['ngRoute'])
-.config(function ($routeProvider, $httpProvider) {
+.config(function ($routeProvider) {
   $routeProvider
     .when('/users', {
-      templateUrl: 'template/users.html',
+      templateUrl: '/template/users.html',
       controller: 'allUsersCtrl'
+    })
+    .when('/user/:id', {
+      templateUrl: '/template/user.html',
+      controller: 'userCtrl'
     })
     .otherwise({
       redirectTo: '/users'
@@ -15,7 +19,6 @@ angular.module('DOS', ['ngRoute'])
     url: '/data/data.json'
   })
   .then(function (resp) {
-  	console.log(resp.data);
     $scope.users = resp.data;
   })
   .catch(function (error) {
@@ -26,4 +29,16 @@ angular.module('DOS', ['ngRoute'])
   	event.preventDefault();
   	console.log(index);
   };
+})
+.controller('userCtrl', function($routeParams, $scope, $http) {
+	$http({
+    method: 'GET',
+    url: '/data/data.json'
+  })
+  .then(function (resp) {
+    $scope.user = resp.data[$routeParams.id];
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
 });

@@ -1,8 +1,16 @@
 <div ng-controller="allUsersCtrl">
-	<label>Search: <input ng-model="searchText" placeholder="Find user"></label>
-	<div ng-repeat="user in users | filter:searchText track by $index" class="user">
-		<h2>Name: {{ user.first_name }} {{ user.last_name }}</h2>
-		<div>Email: <a href="mailto:{{ user.email_address }}">{{ user.email_address }}</a></div>
-		<a ng-href="#/user/{{$index}}" class="btn">View Profile</a>
+	<div>
+		<input ng-model="searchText" name="search" placeholder="Find user">
+		<select ng-model="orderProp">
+			<option value="first_name">First Name</option>
+			<option value="last_name">Last Name</option>
+		</select>
+	</div>
+	<div ng-repeat="user in users | filter:searchText | orderBy:orderProp track by $index" class="user">
+		<div class="card">
+			<h2><a ng-href="#/user/{{$index}}"><span class="large-only">Name:</span> {{ user.first_name }} {{ user.last_name }}</a></h2>
+			<div class="email"><span class="large-only">Email:</span> <a href="mailto:{{ user.email_address }}">{{ user.email_address }}</a></div>
+			<a ng-href="#/user/{{$index}}" ng-click=logger(user) class="btn">View Profile</a>
+		</div>
 	</div>
 </div>

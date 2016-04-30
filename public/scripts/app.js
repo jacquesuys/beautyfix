@@ -2,11 +2,11 @@ angular.module('DOS', ['ngRoute'])
 .config(function ($routeProvider) {
   $routeProvider
     .when('/users', {
-      templateUrl: '/template/users.html',
+      templateUrl: '/partials/users.html',
       controller: 'allUsersCtrl'
     })
     .when('/user/:id', {
-      templateUrl: '/template/user.html',
+      templateUrl: '/partials/user.html',
       controller: 'userCtrl'
     })
     .otherwise({

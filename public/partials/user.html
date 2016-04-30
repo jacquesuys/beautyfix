@@ -1,4 +1,9 @@
 <div ng-controller="userCtrl">
 	<a ng-href="#/users"> < Back</a>
-	{{ user }}
+	<div>
+		Name: {{user.first_name}} {{user.last_name}} <br/>
+		Email: <a href="mailto:{{user.email_address}}">{{user.email_address}}</a> <br/>
+		Birth: {{user.date_of_birth}}, {{user.country}} <br/>
+		Address: {{user.address}}, {{user.city}}, {{user.zip_code}}
+	</div>
 </div>

@@ -6,15 +6,9 @@
 </head>
 
 <body>
-	<div ng-controller="allUsersCtrl">
-		<label>Search: <input ng-model="searchText"></label>
-		<div ng-repeat="user in users | filter:searchText track by $index">
-			<div ng-click=viewUser($index)>{{$index}}</div>
-      <div>Name: {{ user.first_name }} {{ user.last_name }}</div>
-      <div>Email: {{ user.email_address }}</div>
-    </div>
-	</div>
+	<div ng-view></div>
 	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../bower_components/angular-route/angular-route.min.js"></script>
 	<script src="scripts/app.js"></script>
 </body>
 </html>

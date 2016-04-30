@@ -24,11 +24,6 @@ angular.module('DOS', ['ngRoute'])
   .catch(function (error) {
     console.error(error);
   });
-
-  $scope.viewUser = function(index) {
-  	event.preventDefault();
-  	console.log(index);
-  };
 })
 .controller('userCtrl', function($routeParams, $scope, $http) {
 	$http({

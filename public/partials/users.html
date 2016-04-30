@@ -1,8 +1,8 @@
 <div ng-controller="allUsersCtrl">
-	<label>Search: <input ng-model="searchText"></label>
-	<div ng-repeat="user in users | filter:searchText track by $index">
-		<a ng-href="#/user/{{$index}}">View Profile</a>
-		<div>Name: {{ user.first_name }} {{ user.last_name }}</div>
+	<label>Search: <input ng-model="searchText" placeholder="Find user"></label>
+	<div ng-repeat="user in users | filter:searchText track by $index" class="user">
+		<h2>Name: {{ user.first_name }} {{ user.last_name }}</h2>
 		<div>Email: <a href="mailto:{{ user.email_address }}">{{ user.email_address }}</a></div>
+		<a ng-href="#/user/{{$index}}" class="btn">View Profile</a>
 	</div>
 </div>

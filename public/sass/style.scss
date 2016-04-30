@@ -24,22 +24,119 @@ $bp-xl-2 : 67em;
 
 body {
 	font-size: 16px;
+	background-color: #ccc;
 }
 
 a {
 	text-decoration: none;
+	color: rgba(0, 0, 0, 0.5);
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 .container {
 	margin: 0 auto;
-	max-width: 800px;
+	padding: 10px;
+
+	@media all and (min-width: $bp-large) {
+		max-width: 800px;
+	}
+}
+
+.large-only {
+	@media all and (max-width: $bp-med) {
+		display: none;
+	}
+}
+
+.search {
+	@include clearfix;
+}
+
+input[name="search"],
+label {
+	float: left;
+}
+
+input[name="search"] {
+	margin: 0 0 10px;
+	padding: 10px;
+	font-size: 1.25rem;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+	border: 0;
+	width: 70%;
+
+	@media all and (min-width: $bp-large) {
+		width: 85%;
+	}
+}
+
+label {
+	padding: 0 0 0 10px;
+	width: 30%;
+
+	@media all and (min-width: $bp-large) {
+		width: 15%;
+	}
+}
+
+.card {
+	background-color: rgba(255, 255, 255, 0.9);
+	border-color: solid 1px rgba(255, 255, 255, 1);
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.btn {
+	border-radius: 5px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+	padding: 10px;
+	text-align: center;
+	background-color: #ccc;
+	display: block;
+	width: 100%;
+	transition: all 0.35s ease-in;
+
+	&:hover {
+		background-color: #333;
+		text-decoration: none;
+	}
+}
+
+.users {
+
+	&:nth-child {
+		@include clearfix;
+	}
+
+	h2 {
+		padding: 0 0 10px;
+		margin: 0 0 10px;
+		border-bottom: solid 1px #ccc;
+
+		a {
+			color: rgba(0, 0, 0, 0.75);
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.email {
+		margin-bottom: 10px;
+	}
 }
 
 .user {
-	border-bottom: solid 1px #ccc;
+	line-height: 1.5rem;
 
-	h2 {
-		padding: 0;
-		margin: 10px 0;
+	span {
+		color: rgba(0, 0, 0, 0.5);
 	}
 }

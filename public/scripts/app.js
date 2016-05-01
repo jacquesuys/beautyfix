@@ -26,8 +26,8 @@ app.factory('selectUser', function() {
   }
   
   return {
-	  set: set,
-	  get: get
+    set: set,
+    get: get
   }
 });
 
@@ -45,7 +45,7 @@ app.controller('allUsersCtrl', function($scope, $http, selectUser) {
   });
 
   $scope.logger = function(obj) {
-  	selectUser.set(obj);
+    selectUser.set(obj);
   };
 });
 

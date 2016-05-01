@@ -50,6 +50,6 @@ app.controller('allUsersCtrl', function($scope, $http, selectUser) {
 });
 
 app.controller('userCtrl', function($scope, $location, selectUser) {
-	var user = selectUser.get();
-	!user.first_name ? $location.path('/users') : $scope.user = user;
+  var user = selectUser.get();
+  !user.first_name ? $location.path('/users') : $scope.user = user;
 });

@@ -16,24 +16,24 @@ app.config(function ($routeProvider) {
 });
 
 app.factory('selectUser', function() {
-	var savedData = {}
-	function set(data) {
-		savedData = data;
-	}
-	
-	function get() {
-		return savedData;
-	}
-
-	return {
-		set: set,
-		get: get
-	}
+  var savedData = {}
+  function set(data) {
+	  savedData = data;
+  }
+  
+  function get() {
+	  return savedData;
+  }
+  
+  return {
+	  set: set,
+	  get: get
+  }
 });
 
 app.controller('allUsersCtrl', function($scope, $http, selectUser) {
-	$scope.users = [];
-	$http({
+  $scope.users = [];
+  $http({
     method: 'GET',
     url: '/data/data.json'
   })

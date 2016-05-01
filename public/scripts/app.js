@@ -18,11 +18,11 @@ app.config(function ($routeProvider) {
 app.factory('selectUser', function() {
   var savedData = {}
   function set(data) {
-	  savedData = data;
+    savedData = data;
   }
   
   function get() {
-	  return savedData;
+    return savedData;
   }
   
   return {

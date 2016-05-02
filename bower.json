@@ -1,0 +1,30 @@
+{
+  "name": "frontend-developer-assessment",
+  "description": "Frontend Developer Assessment",
+  "main": "gulpfile.js",
+  "authors": [
+    "Jacques Uys <jaxuys@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Angular",
+    "Angular",
+    "Router",
+    "Responsive",
+    "Web",
+    "Design"
+  ],
+  "homepage": "https://github.com/jacquesuys/DOS",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.5",
+    "angular": "^1.5.5"
+  }
+}

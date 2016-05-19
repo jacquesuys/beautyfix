@@ -1,10 +1,9 @@
 {
-  "name": "frontend-developer-assessment",
+  "name": "beautyfix",
   "version": "1.0.0",
-  "description": "Frontend Developer Assessment",
+  "description": "Beautyfix Cosmetics aka Me&You",
   "main": "gulpfile.js",
   "devDependencies": {
-    "bower": "^1.7.7",
     "git": "^0.1.5",
     "gulp": "^3.9.0",
     "gulp-connect": "^2.3.1",

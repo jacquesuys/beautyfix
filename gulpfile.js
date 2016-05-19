@@ -5,7 +5,7 @@ var sass = require("gulp-sass");
 gulp.task("sass", function () {
   return gulp.src('./public/sass/style.scss')
     .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(gulp.dest('./public/ignored_stuff/'));
+    .pipe(gulp.dest('./public/css/'));
 });
 
 gulp.task("sass:watch", function () {

@@ -1,10 +1,13 @@
 var gulp = require("gulp");
 var connect = require("gulp-connect");
 var sass = require("gulp-sass");
+var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task("sass", function () {
   return gulp.src('./public/sass/style.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./public/css/'));
 });
 

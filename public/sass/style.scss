@@ -22,19 +22,47 @@ $bp-xl-2 : 67em;
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   background-color: #ccc;
   overflow-x: hidden;
   position: relative;
-  left: 0;
-  transition: all 0.3s ease;
+  right: 0;
 
   &.nav-open {
-    left: 240px;
+    right: 240px;
+  }
+}
+body,
+nav {
+  transition: all 0.3s ease;
+}
+
+ nav {
+  width: 240px;
+  height: 100%;
+  top: 0;
+  z-index: 10;
+  position: fixed;
+  right: -240px;
+}
+
+.nav-open {
+  nav {
+    right: 0;
   }
 }
 
-a {
-  text-decoration: none;
+header {
+  h1 {
+    display: inline;
+  }
+  
+  > span {
+    float: right;
+  }
 }
 

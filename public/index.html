@@ -2,41 +2,33 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Beautyfix</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+  <!--[if lt IE 9]>
+    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+  <![endif]-->
 </head>
 
 <body>
+  <header>
+    <h1><a href="#" title="Beautyfix">Beautyfix</a></h1>
+    <span><i class="icon-reorder"></i></span>
+    <nav>
+      <ul>
+        <li><a href="#" title="Home">Home</a></li>
+        <li><a href="#" title="About Us">About Us</a></li>
+        <li><a href="#" title="Products">Products</a></li>
+        <li><a href="#" title="Stockists">Stockists</a></li>
+        <li><a href="#" title="Contact Us">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
   <div class="container">
-    <h1>Beautyfix</h1>
+    
   </div>
-  <script type="text/javascript">
-    'use strict';
-    function ready(fn) {
-      if (document.readyState != 'loading'){
-        fn();
-      } else {
-        document.addEventListener('DOMContentLoaded', fn);
-      }
-    }
-
-    var main = function() {
-      var request = new XMLHttpRequest();
-      request.open('GET', 'http://freegeoip.net/json/', true);
-      request.onload = function() {
-        if (request.status >= 200 && request.status < 400) {
-          console.log('country: ' + request.responseText);
-        } else {
-          // We reached our target server, but it returned an error
-        }
-      };
-      request.onerror = function() {
-        // There was a connection error of some sort
-      };
-      request.send();
-    }
-
-    ready(main);
-  </script>
+  <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

@@ -10,4 +10,11 @@ $(document).ready(function(){
   $('header > span').on('click', function(){
     $('body').toggleClass('nav-open');
   });
+
+  $(window).resize(function(){
+    if ($(window).width() >= 640) {
+      $('body').removeClass('nav-open');
+    }
+  });
+
 });

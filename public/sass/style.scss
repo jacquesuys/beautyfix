@@ -1,6 +1,8 @@
 @import 'reset';
 @import '../../bower_components/susy/sass/susy';
 
+// susydocs.oddbird.net
+
 // $susy: (
 //   columns: 12,
 //   gutters: 1/4,
@@ -51,13 +53,82 @@ img {
   max-width: 100%;
 }
 
+h1, h2, h3 {
+  font-family: 'bebasregular';
+  letter-spacing: 1px;
+  margin: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 0.9rem;
+}
+
+hr {
+  margin: 17px;
+  @include span(12 of 12);
+}
+
+footer {
+  padding-bottom: 50px;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
 .container {
-  @include container(60em);
+  @include container(994px);
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.p-t-60 {
+  padding-top: 60px;
+}
+
+.col-left {
+  @include span(6 of 12);
+}
+
+.col-right {
+  @include span(6 at 7 of 12);
+}
+
+.col-full {
+  @include span(12 of 12);
+}
+
+.social {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  line-height: 2.25rem;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 body {
   font-family: "Helvetica-Neue", Helvetica, Arial, sans-serif;
-  background-color: #ccc;
   overflow-x: hidden;
   position: relative;
   right: 0;

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  // fallback: http://ip-api.com/json
   $.get('http://freegeoip.net/json/')
   .done(function(data){
     console.log(data);

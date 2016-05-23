@@ -323,10 +323,37 @@ footer {
   }
 }
 
+// stockists
+.stockists {
+  padding: 40px;
+
+  @media all and (min-width: $bp-small-3) {
+    margin-top: 200px;
+  }
+
+  .col-left, .col-mid, .col-right {
+    @include span(12);
+  }
+
+  @include susy-breakpoint($bp-small-3) {
+    .col-left,
+    .col-mid {
+      @include span(4);
+    }
+
+    .col-right {
+      @include span(4 last);
+    }
+  }
+}
+
 // contact us
 .contact {
-  padding-top: 160px;
   line-height: 1.5rem;
+
+  @media all and (min-width: $bp-small-3) {
+    margin-top: 200px;
+  }
 
   .col-left,
   .col-right {
@@ -336,6 +363,7 @@ footer {
   .span-4 {
     @include span(4);
   }
+
   .span-8 {
     @include span(8 last);
   }

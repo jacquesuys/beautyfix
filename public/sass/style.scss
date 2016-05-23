@@ -327,6 +327,18 @@ footer {
 .stockists {
   padding: 40px;
 
+  &.uk {
+    display: none;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    line-height: 1.5rem;
+  }
+
   @media all and (min-width: $bp-small-3) {
     margin-top: 200px;
   }

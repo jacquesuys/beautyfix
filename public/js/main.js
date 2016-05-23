@@ -29,13 +29,27 @@ $(document).ready(function(){
     }
   });
 
-  // if not ZA show UK
-  if ($location !== "South Africa") {
-    $('.za').hide();
-    $('.uk').show();
-  } else {
-    $('.za').show();
-    $('.uk').hide();
-  }
+  var showStockists = function() {
+    // if not ZA show UK
+    var $location = sessionStorage.getItem('country');
+    if ($location !== "South Africa") {
+      $('.za').hide();
+      $('.uk').show();
+    } else {
+      $('.za').show();
+      $('.uk').hide();
+    }
+    $('.region > span a').removeClass('active');
+    $('.region > span').find("[data-country='" + $location + "']").addClass('active');
+  };
+
+  showStockists();
+
+  $('.region > span a').on('click', function(e){
+    e.preventDefault();
+    var country = $(this).data('country');
+    sessionStorage.setItem('country', country);
+    showStockists();
+  });
 
 });

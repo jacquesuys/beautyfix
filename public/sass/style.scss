@@ -116,6 +116,28 @@ header {
     margin-top: 30px;
   }
 
+  .region {
+    float: right;
+    padding: 10px;
+    font-size: 0.8125rem;
+
+    &:last-child {
+      padding: 0 0 0 5px;
+    }
+
+    span {
+      padding: 0 5px;
+    }
+
+    a {
+      color: #999;
+
+      &.active, &:hover {
+        color: #000;
+      }
+    }
+  }
+
   @media all and (max-width: $bp-small-3) {    
     > span {
       float: right;
@@ -159,7 +181,7 @@ nav {
 
   @media all and (min-width: 39.9em) {
     float: right;
-    margin-top: 30px;
+    clear: both;
 
     ul {
       @include clearfix();

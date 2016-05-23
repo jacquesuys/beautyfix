@@ -2,14 +2,13 @@
 @import '../../bower_components/susy/sass/susy';
 
 // susydocs.oddbird.net
-
-// $susy: (
-//   columns: 12,
-//   gutters: 1/4,
-//   math: fluid,
-//   output: float,
-//   gutter-position: inside,
-// );
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+);
 
 $bp-small : 24em;
 $bp-small-2 : 29.75em;
@@ -38,7 +37,6 @@ $bp-xl-2 : 67em;
        url('../fonts/BEBAS___-webfont.svg#bebasregular') format('svg');
   font-weight: normal;
   font-style: normal;
-
 }
 
 * {
@@ -51,80 +49,6 @@ a {
 
 img {
   max-width: 100%;
-}
-
-h1, h2, h3 {
-  font-family: 'bebasregular';
-  letter-spacing: 1px;
-  margin: 0;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-h2 {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-}
-
-h3 {
-  font-size: 0.9rem;
-}
-
-hr {
-  margin: 17px;
-  @include span(12 of 12);
-}
-
-footer {
-  padding-bottom: 50px;
-}
-
-.fl {
-  float: left;
-}
-
-.fr {
-  float: right;
-}
-
-.container {
-  @include container(994px);
-}
-
-.txt-center {
-  text-align: center;
-}
-
-.p-t-60 {
-  padding-top: 60px;
-}
-
-.col-left {
-  @include span(6 of 12);
-}
-
-.col-right {
-  @include span(6 at 7 of 12);
-}
-
-.col-full {
-  @include span(12 of 12);
-}
-
-.social {
-  width: 32px;
-  height: 32px;
-  display: inline-block;
-  background: #000;
-  color: #fff;
-  line-height: 2.25rem;
-  transition: opacity 0.3s ease;
-
-  &:hover {
-    opacity: 0.5;
-  }
 }
 
 body {
@@ -150,6 +74,13 @@ header {
   height: 153px;
   font-family: 'bebasregular';
 
+  @media all and (min-width: $bp-small-3) {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
   h1 {
     display: inline;
 
@@ -173,7 +104,7 @@ header {
     margin-top: 30px;
   }
 
-  @media all and (max-width: $bp-small-3) {
+  @media all and (max-width: $bp-small-3) {    
     > span {
       float: right;
       display: block;
@@ -234,5 +165,123 @@ nav {
   }
 }
 
+h1, h2, h3 {
+  font-family: 'bebasregular';
+  letter-spacing: 1px;
+  margin: 0;
+}
 
+h2 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
 
+h3 {
+  font-size: 0.9rem;
+}
+
+hr {
+  margin: 17px 0;
+  @include span(12);
+}
+
+footer {
+  padding-bottom: 50px;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.container {
+  background-color: #fff;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.m-b-34px {
+  margin-bottom: 34px;
+}
+
+.col-left {
+  @include span(12);
+}
+
+.col-right {
+  @include span(12);
+}
+
+@include susy-breakpoint($bp-small-3) {
+  .col-left {
+    @include span(6);
+  }
+
+  .col-right {
+    @include span(6 last);
+  }
+}
+
+footer {
+  @include span(12);
+}
+
+.social {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  line-height: 2.25rem;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+// homepage
+.cover {
+  background: url(../img/background.jpg) no-repeat center center;
+  background-size: 100%;
+  height: 400px;
+
+  @media all and (max-width: $bp-small-3) { 
+    display: none;
+  }
+}
+
+.product {
+  padding-top: 20px;
+
+  .col-left {
+    text-align: center;
+    padding: 20px;
+
+    @include susy-breakpoint($bp-small-3) {
+      img {
+        float: right;
+      }
+    }
+  }
+  .col-right {
+    padding: 20px;
+
+    @include susy-breakpoint($bp-small-3) {
+      padding: 100px 20px 20px;
+
+      ul {
+        padding-left: 0;
+
+        li {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

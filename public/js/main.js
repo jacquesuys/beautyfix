@@ -3,6 +3,8 @@ $(document).ready(function(){
   $.get('http://freegeoip.net/json/')
   .done(function(data){
     console.log(data);
+    var country = data["country_name"];
+    console.log(country);
   })
   .fail(function(err){
     if (navigator.geolocation) {

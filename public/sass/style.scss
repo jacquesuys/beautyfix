@@ -39,12 +39,24 @@ $bp-xl-2 : 67em;
   font-style: normal;
 }
 
+@font-face {
+  font-family:'GothamBook-Regular';
+  src: url('../fonts/GothamBook_gdi.eot');
+  src: url('../fonts/GothamBook_gdi.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/GothamBook_gdi.woff') format('woff'),
+    url('../fonts/GothamBook_gdi.ttf') format('truetype'),
+    url('../fonts/GothamBook_gdi.svg#GothamBook-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
 
 a {
   text-decoration: none;
+  color: #000;
 }
 
 img {
@@ -165,7 +177,7 @@ nav {
   }
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5 {
   font-family: 'bebasregular';
   letter-spacing: 1px;
   margin: 0;
@@ -184,6 +196,11 @@ hr {
   @include span(12);
 }
 
+p {
+  font-family: "GothamBook-Regular";
+  font-size: 0.875rem;
+}
+
 footer {
   padding: 50px 0;
 }
@@ -198,6 +215,7 @@ footer {
 
 .container {
   background-color: #fff;
+  @include span(12);
 }
 
 .txt-center {
@@ -302,5 +320,23 @@ footer {
     font-size: 0.875rem;
     line-height: 1.375rem;
     padding-top: 65px;
+  }
+}
+
+// contact us
+.contact {
+  padding-top: 160px;
+  line-height: 1.5rem;
+
+  .col-left,
+  .col-right {
+    padding-top: 60px;
+  }
+
+  .span-4 {
+    @include span(4);
+  }
+  .span-8 {
+    @include span(8 last);
   }
 }
